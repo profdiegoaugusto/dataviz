@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574468506904.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "856530652",
+    "id" : "C4EC4B81",
+    "lastKnownWriteTime" : 1574469222,
+    "last_content_update" : 1574469303290,
+    "path" : "D:/Trabalho/Disciplinas/InfoViz/pratica_dataviz/1_introducao.Rmd",
+    "project_path" : "1_introducao.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "2,12",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

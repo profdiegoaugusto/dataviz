@@ -1,0 +1,175 @@
+---
+title: "R Notebook"
+output: html_notebook
+
+---
+Este é um notebook [R Markdown](http://rmarkdown.rstudio.com); quando você executa o código no bloco de notas, os resultados aparecem abaixo do código.
+
+Tente executar o trecho de código abaixo, clicando no botão *Executar* dentro do painel cinza e pressionando *Ctrl + Enter* ou selecionando uma linha de código e pressionando *Ctrl + Shift + Enter*.
+
+```{r}
+plot(cars)
+```
+
+Adicione um novo trecho de código clicando no botão *Insert (Inserir)* na barra de ferramentas ou pressionando *Ctrl + Alt + I*.
+
+Quando você salvar o Notebook R, um arquivo HTML contendo o código e a saída será salvo ao lado dele (clique no botão *Preview (Visualizar)* ou pressione *Ctrl + Shift + K* para visualizar o arquivo HTML).
+
+A visualização (Preview) mostra uma cópia HTML renderizada do conteúdo do editor. Consequentemente, não será executado nenhum trecho de código em R. Em vez disso, será exibido como saída o trecho de código que foi executado pela última vez no editor.
+
+
+# Dados
+
+***
+
+Antes de começarmos criar as nossas visualizações nós precisamos dos dados. Afinal de contas, os dados são a base de qualquer técnica de visualização e são eles que as tornam interessantes. Então, onde podemos encontrar bons conjuntos de dados? Confira abaixo a lista de alguns lugares que você pode obter seus dados:
+
+
+* [Portal Brasileiro de Dados Abertos](http://dados.gov.br/)
+* [IBGE](https://www.ibge.gov.br/)
+* [Data Viva](http://dataviva.info/pt/data/)
+* [Rdatasets](https://vincentarelbundock.github.io/Rdatasets/)
+* [Kaggle](https://www.kaggle.com/datasets)
+* [World Bank Open Data](https://data.worldbank.org/)
+
+
+Além disso, o R vem com vários conjuntos de dados internos, que geralmente são usados como dados de demonstração para reproduzir as funções do R. Para ver a lista de dados pré-carregados, execute o comando abaixo:
+
+
+```{r}
+data()
+
+```
+
+
+
+# Introdução
+***
+
+Para entrarmos no mundo de Visualização de Dados, vamos criar nosso primeiro gráfico de barras em R.
+Para isso, iremos visualizar dados históricos de medalhas do Brasil nas olimpíadas que contém as seguintes colunas: ano, sede (pais anfitrião da Copa) e campeão.
+
+
+```{r}
+
+olimpiadas <- read.csv("data/olimpiadas_brasil.csv", sep = ",", header=TRUE)
+
+head(olimpiadas, 5)
+
+```
+
+Para acessar uma coluna específica dos dados, use o nome do *data frame* seguido por um cifrão e o nome da coluna. 
+Por exemplo, se você deseja acessar a coluna *total*, insira o seguinte: *olimpiadas$total*.
+
+
+```{r}
+
+olimpiadas$total
+
+```
+
+Agora que já temos os dados carregados no R, podermos ir direto para os gráficos com o comando barplot().
+
+```{r}
+
+barplot(olimpiadas$total)
+
+```
+Nada mal, hein?! Mas podemos fazer melhor! 
+Use o argumento *names.arg* no *barplot()* para especificar os nomes de cada barra, ou seja, o ano de cada olimpíada.
+
+
+
+```{r}
+
+barplot(olimpiadas$total, names.arg = olimpiadas$ano)
+
+```
+
+Você pode aplicar vários outros [argumentos](https://www.rdocumentation.org/packages/graphics/versions/3.6.1/topics/barplot) em sua função, por exemplo, você pode adicionar rótulos nos eixos, alterar bordas e alterar cores.
+
+
+
+
+
+```{r}
+
+barplot(olimpiadas$total, names.arg = olimpiadas$ano, col='green4', border=NA, xlab="Ano", ylab="Total de Medalhas")
+
+```
+
+No exemplo acima:
+
+* O argumento *col* pode ser a sua escolha de cores (especificada na documentação R) ou um número hexadecimal como #9D2933;
+* Em *border*, você especificou nenhuma borda com o valor *NA*, que é uma constante lógica que significa  *nenhum valor*;
+* Você também rotulou os eixos x e y com o "Ano" e "Total de Medalhas", respectivamente.
+
+
+Você não precisa se limitar em apenas uma cor! Você pode fornecer várias cores na função barplot(), para colorir cada barra da maneira que desejar. Por exemplo, digamos que você queira destacar os anos em que o Brasil ganhou medalhas de ouro na cor dourada (#D6AF36) e o restante em cinza claro (#CCCCCC). Para fazer isso, você precisa:
+
+1. criar um vetor de cores em R; 
+2. Visitar todos os anos e decidir qual será a cor da barra correspondente;
+3. Se o Brasil ganhou ao menos uma medalha de ouro, atribua a cor dourada para a barra; Caso contrário, colora de cinza. 
+
+Aqui está o código para fazer isso:
+
+```{r}
+
+cores_preenchimento <- c() # inicia um vetor vazio
+
+for (i in 1:length(olimpiadas$ano)) {
+  
+  if(olimpiadas$ouro[i] > 0) {
+    
+    cores_preenchimento <- c(cores_preenchimento, "#D6AF36")
+    
+  } else {
+    cores_preenchimento <- c(cores_preenchimento, "#CCCCCC")
+  }
+  
+  
+}
+
+```
+
+
+Após executar o código acima, passe o vetor cores_preenchimento no argumento col do barplot()
+
+
+```{r}
+
+barplot(olimpiadas$total, names.arg = olimpiadas$ano, col=cores_preenchimento, border=NA, xlab="Ano", ylab="Total de Medalhas")
+
+````  
+
+
+
+
+# Exercícios
+
+***
+
+1. Crie um gráfico de barras para a coluna *prata* destacando os anos que o Brasil ganhou medalhas de prata com a cor (#A7A7AD) e o restante em cinza claro (#CCCCCC).
+
+2. Crie um gráfico de barras para a coluna *bronze* destacando os anos que o Brasil ganhou medalhas de prata com a cor (#A77044) e o restante em cinza claro (#CCCCCC).
+
+3. Exporte os três gráficos de barras (ouro, prata e bronze) para o formato de imagem .png e utilizando a sintaxe rmarkdown os adicione neste documento lado a lado.
+
+4. Analise, compare, pense e responda:
+
+  + Existe algum padrão visual nos gráficos? Quais são?
+  + O que você aprendeu com os gráficos?
+  + Quais insights você obteve?
+
+
+
+
+
+
+
+
+
+
+
+
+

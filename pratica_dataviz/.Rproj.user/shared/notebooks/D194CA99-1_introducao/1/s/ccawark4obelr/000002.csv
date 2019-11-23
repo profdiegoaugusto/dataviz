@@ -1,0 +1,3 @@
+"0",""
+"0","barplot(olimpiadas$total, names.arg = olimpiadas$ano)"
+"0",""

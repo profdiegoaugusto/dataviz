@@ -1,0 +1,4 @@
+"0",""
+"0","olimpiadas <- read.csv(""data/olimpiadas_brasil.csv"", sep = "","", header=TRUE)"
+"0",""
+"0","head(olimpiadas, 5)"
