@@ -43,11 +43,11 @@ data()
 
 
 
-# Introdução
+# Bem-Vindo
 ***
 
 Para entrarmos no mundo de Visualização de Dados, vamos criar nosso primeiro gráfico de barras em R.
-Para isso, iremos visualizar dados históricos de medalhas do Brasil nas olimpíadas que contém as seguintes colunas: ano, sede (pais anfitrião da Copa) e campeão.
+Para isso, iremos visualizar dados históricos de medalhas do Brasil nas olimpíadas que contém as seguintes colunas: ano, local do evento, e quantidade de medalhas de ouro, prata, bronze; além do total de medalhas.
 
 
 ```{r}

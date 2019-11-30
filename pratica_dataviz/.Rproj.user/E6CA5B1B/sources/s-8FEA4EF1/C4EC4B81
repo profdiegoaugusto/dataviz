@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "856530652",
+    "hash" : "0",
     "id" : "C4EC4B81",
-    "lastKnownWriteTime" : 1574469222,
-    "last_content_update" : 1574469303290,
-    "path" : "D:/Trabalho/Disciplinas/InfoViz/pratica_dataviz/1_introducao.Rmd",
+    "lastKnownWriteTime" : 1575026852,
+    "last_content_update" : 1575026852324,
+    "path" : "D:/Trabalho/Disciplinas/Visualização de Dados/Repositório/dataviz/pratica_dataviz/1_introducao.Rmd",
     "project_path" : "1_introducao.Rmd",
     "properties" : {
         "chunk_output_type" : "inline",
-        "cursorPosition" : "2,12",
-        "scrollLine" : "0"
+        "cursorPosition" : "38,0",
+        "scrollLine" : "35"
     },
     "read_only" : false,
     "read_only_alternatives" : [

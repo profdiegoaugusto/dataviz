@@ -1,0 +1,237 @@
+---
+title: "Tipos de Gráficos"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+# ggplot2
+
+A maneira mais fácil de obter o ggplot2 é instalar o pacote tidyverse
+O tidyverse é uma coleção de pacotes R projetados para ciência de dados
+
+```{r}
+install.packages("tidyverse")
+```
+
+Como alternativa, instale apenas o ggplot2:
+
+```{r}
+install.packages("ggplot2")
+```
+
+
+```{r}
+# Carrega o ggplot2
+library(ggplot2)
+```
+
+
+
+### Gráfico de Barras
+
+![](img/barchart.png)
+
+
+
+```{r}
+
+
+
+
+
+
+
+```
+
+
+### Gráfico de Barras Horizontal
+
+![](img/horizontal_barchart.png)
+
+
+
+```{r}
+
+```
+
+
+### Histograma
+
+![](img/histograma.png)
+
+
+```{r}
+
+
+
+```
+
+
+
+
+
+### Gráfico de Dispersão
+
+![](img/scatterplot.png)
+
+
+```{r}
+
+
+
+```
+
+
+### Mapa de Calor (Heatmap)
+
+![](img/heatmap.png)
+
+```{r}
+
+
+
+```
+
+
+
+
+
+### Gráfico de Linhas
+
+![](img/line_chart.png)
+
+
+
+```{r}
+
+
+```
+
+
+
+### Gráfico de Área
+
+
+![](img/area_chart.png)
+
+
+```{r}
+
+
+
+
+```
+
+
+### Gráfico de Área Empilhada
+
+![](img/stacked_area.png)
+
+
+
+```{r}
+
+
+
+
+```
+
+
+### Gráfico de Barras Empilhadas
+
+
+![](img/stacked_bar_chart.png)
+
+
+
+```{r}
+
+
+
+
+```
+
+
+### Gráfico de Barras Agrupadas
+
+![](img/grouped_bar.png)
+
+
+
+```{r}
+
+
+
+```
+
+
+### Gráfico de Setores (Pizza)
+
+
+![](img/pie_chart.png)
+
+
+```{r}
+
+
+
+
+```
+
+
+
+### Gráfico de Setores (Rosca)
+
+![](img/donut.png)
+
+
+
+```{r}
+
+
+
+
+```
+
+
+
+### Treemap
+
+![](img/treemap.png)
+
+
+```{r}
+
+
+
+```
+
+
+
+
+# Referências
+
+[Gráficos com ggplot2](https://www.curso-r.com/material/ggplot/)
+
+[The R Graph Gallery](https://www.r-graph-gallery.com/index.html)
+
+
+[Hadley Wickham - ggplot: Elegant graphics for data analysis.](http://moderngraphics11.pbworks.com/f/ggplot2-Book09hWickham.pdf)
+
+[Data Visualization Using R & ggplot - Karthik Ram.](https://combine-australia.github.io/r-novice-gapminder/ggplot.pdf)
+
+[A ggplot2 Primer.](https://www.data-action-lab.com/wp-content/uploads/2018/11/DSRS_GGP2.pdf)
+
+[ggplot2: Introduction and exercises - Umer Zeeshan Ijaz.](http://userweb.eng.gla.ac.uk/umer.ijaz/bioinformatics/ecological/ggplot2.pdf)
+
+[Getting started with ggplot2 - Gaston Sanchez.](https://github.com/ucb-stat133/stat133-fall-2016/blob/master/notes/09-ggplot2/09-ggplot2.pdf)
+
+[Charts with ggplot2 -Andrew Ba Tran.](https://journalismcourses.org/courses/RC0818/charts_with_ggplot.pdf)
+
+[STAT 408.](http://www.math.montana.edu/ahoegh/teaching/stat408/lecturematerials/)
+
+[ggplot2: elegant graphics for data analysis ](https://github.com/hadley/ggplot2-book)
+
+
+
